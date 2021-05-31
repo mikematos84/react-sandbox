@@ -1,0 +1,104 @@
+$selector-radius: 1rem;
+$selector-container-radius: .5rem;
+
+body {
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+}
+
+.ss {
+  &.container {
+    width: 100vw;
+    height: 100vh;
+    scroll-snap-type: y mandatory;
+    overflow-y: scroll;
+  }
+
+  &.section {
+    width: 100%;
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    scroll-snap-align: start;
+    padding: 2rem;
+    box-sizing: border-box;
+
+    h1{
+      margin: 0;
+    }
+  }
+
+  &.controller{
+    position: fixed;
+    display: flex;
+    justify-content: center;
+
+    .selector-container{
+      display: flex;
+      background-color: grey;
+    }
+
+    &.top, &.bottom{
+      width: 100vw;
+    }
+
+    &.top{
+      top: 0rem;
+
+      .selector-container{
+        border-bottom-left-radius: $selector-container-radius;
+        border-bottom-right-radius: $selector-container-radius;
+      }
+    }
+
+    &.bottom{
+      bottom: 0rem;
+
+      .selector-container{
+        border-top-left-radius: $selector-container-radius;
+        border-top-right-radius: $selector-container-radius;
+      }
+    }
+
+    &.left, &.right{
+      top: 0rem;
+      height: 100vh;
+      align-items: center;
+
+      .selector-container{
+        flex-direction: column;
+      }
+    }
+
+    &.left{
+      left: 0rem;
+
+      .selector-container{
+        border-top-right-radius: $selector-container-radius;
+        border-bottom-right-radius: $selector-container-radius;
+      }
+    }
+
+    &.right{
+      right: 1rem; // to compensate for scroll bar
+      @media only screen and (max-width: 600px) {
+        right: 0rem;
+      }
+
+      .selector-container{
+        border-top-left-radius: $selector-container-radius;
+        border-bottom-left-radius: $selector-container-radius;
+      }
+    }
+
+    .selector{
+      display: block;
+      background-color: white;
+      border-radius: 100%;
+      width: $selector-radius;
+      height: $selector-radius;
+      margin: .5rem;
+    }
+  }
+}

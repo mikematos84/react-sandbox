@@ -1,25 +1,21 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { MouseEvent } from 'react';
+import { ScrollSnapContainer, ScrollSnapController, ScrollSnapSection } from './components/ScrollSnapContainer';
+import _ from 'lodash';
+import { LoremIpsum } from 'lorem-ipsum';
+import { Section } from './components/ScrollSnapContainer/types/Section';
+
+const lorem = new LoremIpsum();
+const sections = Array(3).fill(null).map((section: Section[], index: number) => (
+  {
+    title: `Page ${index + 1}`,
+    body: Array(_.random(1, 20)).fill(null).map(p => lorem.generateParagraphs(1)),
+    ref: React.createRef<HTMLScriptElement>()
+  }
+))
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ScrollSnapContainer sections={sections} />
   );
 }
 
