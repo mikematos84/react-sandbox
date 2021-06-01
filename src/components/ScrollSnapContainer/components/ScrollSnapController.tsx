@@ -1,5 +1,5 @@
-import { MouseEvent, RefObject } from 'react';
-import { Section } from '../types/Section';
+import { MouseEvent } from 'react';
+import { Section } from '../types';
 
 export const ScrollSnapController = ({
   sections,

@@ -1,10 +1,9 @@
 import React from 'react';
-import { ScrollSnapSection } from "..";
-import { Section } from "../types/Section";
-import { ScrollSnapContainerProps } from "../types/ScrollSnapContainerProps";
-import ScrollSnapController from "./ScrollSnapController";
 
-const ScrollSnapContainer = ({
+import { Section, ScrollSnapContainerProps } from "../types";
+import { ScrollSnapController, ScrollSnapSection } from "../components";
+
+export const ScrollSnapContainer = ({
   children,
   sections
 }: ScrollSnapContainerProps) => {

@@ -1,7 +1,7 @@
 import React from 'react';
-import { ScrollSnapSectionProps } from "../types/ScrollSnapSectionProps";
+import { ScrollSnapSectionProps } from "../types";
 
-const ScrollSnapSection = React.forwardRef<HTMLScriptElement, any>((props: ScrollSnapSectionProps, ref) => {
+export const ScrollSnapSection = React.forwardRef<HTMLScriptElement, any>((props: ScrollSnapSectionProps, ref) => {
   return (
     <section className="ss section" ref={ref}>
       {props.children}
