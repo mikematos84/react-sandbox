@@ -1,0 +1,11 @@
+@import '../index';
+@import '../App';
+
+// components
+@import '../components/ScrollSnapContainer/styles';
+
+// screens
+@import '../screens/styles'; // shared styles
+@import '../screens/Home/styles';
+@import '../screens/Error404/styles';
+@import '../screens/Demos/ScrollSnapContainer/styles';
